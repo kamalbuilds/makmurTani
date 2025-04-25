@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "MakmurTani",
+    "description": "Kesejahteraan Petani Indonesia melalui Blockchain"
+  },
+  "common": {
+    "back": "Kembali",
+    "cancel": "Batal",
+    "confirm": "Konfirmasi",
+    "continue": "Lanjutkan",
+    "loading": "Memuat...",
+    "save": "Simpan"
+  },
+  "auth": {
+    "connect_wallet": "Hubungkan Dompet",
+    "disconnect_wallet": "Putuskan Dompet",
+    "sign_in": "Masuk",
+    "sign_out": "Keluar",
+    "sign_up": "Daftar"
+  },
+  "nav": {
+    "home": "Beranda",
+    "marketplace": "Pasar",
+    "dashboard": "Dasbor",
+    "farmland": "Lahan Pertanian",
+    "lending": "Pinjaman",
+    "about": "Tentang Kami"
+  },
+  "home": {
+    "hero": {
+      "title": "Tokenisasi untuk Petani Indonesia",
+      "subtitle": "Platform blockchain yang memberikan akses modal, transparansi rantai pasok, dan harga yang adil",
+      "cta": "Mulai Sekarang"
+    },
+    "features": {
+      "title": "Fitur Utama",
+      "rwa": {
+        "title": "Tokenisasi Aset Dunia Nyata",
+        "description": "Mengubah lahan pertanian, hasil panen, dan kegiatan pertanian menjadi aset digital yang dapat diperdagangkan"
+      },
+      "transparency": {
+        "title": "Transparansi Rantai Pasok",
+        "description": "Lacak produk pertanian dari ladang ke meja makan dengan catatan blockchain yang tidak dapat diubah"
+      },
+      "loans": {
+        "title": "Pinjaman Mikro",
+        "description": "Akses modal dengan menggunakan aset yang ditokenisasi sebagai jaminan"
+      },
+      "marketplace": {
+        "title": "Pasar Digital",
+        "description": "Beli dan jual aset pertanian yang sudah ditokenisasi dengan harga yang adil"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dasbor",
+    "assets": "Aset Saya",
+    "loans": "Pinjaman Saya",
+    "investments": "Investasi Saya",
+    "no_assets": "Belum ada aset yang terdaftar",
+    "no_loans": "Belum ada pinjaman aktif",
+    "no_investments": "Belum ada investasi yang dilakukan"
+  },
+  "farmland": {
+    "title": "Lahan Pertanian",
+    "register": "Daftarkan Lahan",
+    "my_farmland": "Lahan Saya",
+    "verification_status": "Status Verifikasi",
+    "verified": "Terverifikasi",
+    "unverified": "Belum Terverifikasi",
+    "form": {
+      "certificate_id": "Nomor Sertifikat Tanah",
+      "area": "Luas (dalam meter persegi)",
+      "location": "Lokasi",
+      "province": "Provinsi",
+      "district": "Kabupaten",
+      "sub_district": "Kecamatan",
+      "postal_code": "Kode Pos",
+      "soil_type": "Jenis Tanah",
+      "crops": "Jenis Tanaman"
+    }
+  },
+  "marketplace": {
+    "title": "Pasar",
+    "list_asset": "Daftarkan Aset",
+    "active_listings": "Penawaran Aktif",
+    "my_listings": "Penawaran Saya",
+    "no_listings": "Tidak ada penawaran aktif",
+    "form": {
+      "asset": "Pilih Aset",
+      "price": "Harga",
+      "payment_token": "Token Pembayaran"
+    }
+  },
+  "lending": {
+    "title": "Pinjaman",
+    "apply": "Ajukan Pinjaman",
+    "active_loans": "Pinjaman Aktif",
+    "loan_offers": "Penawaran Pinjaman",
+    "my_investments": "Investasi Saya",
+    "form": {
+      "collateral": "Jaminan",
+      "amount": "Jumlah Pinjaman",
+      "duration": "Durasi (hari)",
+      "token": "Token Pinjaman"
+    }
+  }
+} 

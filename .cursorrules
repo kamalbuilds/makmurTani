@@ -1,0 +1,29 @@
+# MakmurTani Implementation Plan
+
+## Project Overview
+MakmurTani is a blockchain-based platform aimed at revolutionizing Indonesia's agricultural sector through the tokenization of real-world assets (RWAs). Built on Lisk's Layer 2 technology, the platform enables farmers to tokenize their land, crops, and farming activities, providing them with access to investment, fair pricing, and transparent supply chain tracking.
+
+## Smart Contracts
+- Refine RWAFarmersToken.sol to support advanced RWA tokenization
+- Implement IndonesianFarmlandRegistry contract for land verification
+- Create MakmurTaniMarketplace for trading tokenized assets
+- Develop DeFiLending platform for microloans to farmers
+
+## Backend Services
+- Set up Supabase for database and authentication
+- Integrate with Lisk blockchain for transaction verification
+- Implement supply chain tracking and verification
+- Create APIs for mobile and web access
+
+## Frontend (Next.js PWA)
+- Develop responsive, bilingual UI (Indonesian/English)
+- Implement farmer dashboard for managing assets
+- Create investor interface for funding opportunities
+- Build supply chain visualization tools
+- Set up Progressive Web App features for offline use
+
+## Testing & Deployment
+- Comprehensive testing on Lisk testnet
+- Security audits for smart contracts
+- User testing with Indonesian farmers
+- Phased deployment strategy 

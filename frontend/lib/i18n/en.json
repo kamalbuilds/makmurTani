@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "MakmurTani",
+    "description": "Blockchain-Powered Prosperity for Indonesian Farmers"
+  },
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "continue": "Continue",
+    "loading": "Loading...",
+    "save": "Save"
+  },
+  "auth": {
+    "connect_wallet": "Connect Wallet",
+    "disconnect_wallet": "Disconnect Wallet",
+    "sign_in": "Sign In",
+    "sign_out": "Sign Out",
+    "sign_up": "Sign Up"
+  },
+  "nav": {
+    "home": "Home",
+    "marketplace": "Marketplace",
+    "dashboard": "Dashboard",
+    "farmland": "Farmland",
+    "lending": "Lending",
+    "about": "About Us"
+  },
+  "home": {
+    "hero": {
+      "title": "Tokenization for Indonesian Farmers",
+      "subtitle": "A blockchain platform that provides access to capital, supply chain transparency, and fair pricing",
+      "cta": "Get Started"
+    },
+    "features": {
+      "title": "Key Features",
+      "rwa": {
+        "title": "Real-World Asset Tokenization",
+        "description": "Convert farmland, crops, and farming activities into tradable digital assets"
+      },
+      "transparency": {
+        "title": "Supply Chain Transparency",
+        "description": "Track agricultural products from farm to table with immutable blockchain records"
+      },
+      "loans": {
+        "title": "Microloans",
+        "description": "Access capital by using tokenized assets as collateral"
+      },
+      "marketplace": {
+        "title": "Digital Marketplace",
+        "description": "Buy and sell tokenized agricultural assets at fair prices"
+      }
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "assets": "My Assets",
+    "loans": "My Loans",
+    "investments": "My Investments",
+    "no_assets": "No registered assets yet",
+    "no_loans": "No active loans",
+    "no_investments": "No investments made yet"
+  },
+  "farmland": {
+    "title": "Farmland",
+    "register": "Register Farmland",
+    "my_farmland": "My Farmland",
+    "verification_status": "Verification Status",
+    "verified": "Verified",
+    "unverified": "Unverified",
+    "form": {
+      "certificate_id": "Land Certificate Number",
+      "area": "Area (in square meters)",
+      "location": "Location",
+      "province": "Province",
+      "district": "District",
+      "sub_district": "Sub-district",
+      "postal_code": "Postal Code",
+      "soil_type": "Soil Type",
+      "crops": "Crop Types"
+    }
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "list_asset": "List Asset",
+    "active_listings": "Active Listings",
+    "my_listings": "My Listings",
+    "no_listings": "No active listings",
+    "form": {
+      "asset": "Select Asset",
+      "price": "Price",
+      "payment_token": "Payment Token"
+    }
+  },
+  "lending": {
+    "title": "Lending",
+    "apply": "Apply for Loan",
+    "active_loans": "Active Loans",
+    "loan_offers": "Loan Offers",
+    "my_investments": "My Investments",
+    "form": {
+      "collateral": "Collateral",
+      "amount": "Loan Amount",
+      "duration": "Duration (days)",
+      "token": "Loan Token"
+    }
+  }
+} 

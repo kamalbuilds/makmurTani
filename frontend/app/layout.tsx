@@ -1,65 +1,36 @@
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "@/components/ui/toaster";
-import { Web3Provider } from "@/components/web3-provider";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import "@/styles/globals.css";
-import type { Metadata, Viewport } from "next";
-import { Inter as FontSans } from "next/font/google";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import { Providers } from './providers';
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
+const inter = Inter({ subsets: ['latin'] });
 
-const metadata: Metadata = {
-  title: `${siteConfig.name} — ${siteConfig.description}`,
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-  },
-};
-
-const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+export const metadata: Metadata = {
+  title: 'MakmurTani - Empowering Indonesian Farmers',
+  description: 'Tokenize real-world agricultural assets, access fair markets, and unlock finance for Indonesian farmers.',
+  manifest: '/manifest.json',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head />
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Web3Provider>
-            <div className="relative flex min-h-screen flex-col">
-              <SiteHeader />
-              <div className="flex-1">{children}</div>
-              <SiteFooter />
-              <Toaster />
-            </div>
-            <TailwindIndicator />
-          </Web3Provider>
-        </ThemeProvider>
+    <html lang="en">
+      <head>
+        <meta name="theme-color" content="#1B5E20" />
+      </head>
+      <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50`}>
+        <Providers>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

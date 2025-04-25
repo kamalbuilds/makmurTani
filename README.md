@@ -1,11 +1,11 @@
-# Indonesia-Farmers-Revolution-Onchain
+# MakmurTani: Blockchain-Powered Prosperity for Indonesian Farmers
 
-Bringing Supply Chain Transparency and investments in Indonesia's Agricultural Sector
+MakmurTani ("Prosperous Farmer") is a comprehensive platform that brings supply chain transparency and investment opportunities to Indonesia's agricultural sector through the tokenization of real-world assets (RWAs).
+
+## The Problem
 
 Indonesia's agricultural sector faces significant challenges related to supply chain inefficiencies and a lack of transparency. 
-These issues not only affect farmers' livelihoods but also impact consumers and the overall economy. By utilizing Hedera's blockchain technology, a decentralized application (dApp) can be developed to track agricultural products throughout the supply chain, ensuring transparency and fair pricing. This approach can address several critical issues in the agricultural landscape of Indonesia.
-
-#### Current Challenges in the Agricultural Supply Chain
+These issues not only affect farmers' livelihoods but also impact consumers and the overall economy. Key challenges include:
 
 1. **Lack of Transparency**: Farmers often do not know the final price of their products or how much consumers are paying. This opacity can lead to exploitation by middlemen who may take advantage of farmers' lack of market knowledge.
 
@@ -15,32 +15,44 @@ These issues not only affect farmers' livelihoods but also impact consumers and 
 
 4. **Access to Market Information**: Many smallholder farmers lack access to real-time market data, which hinders their ability to make informed decisions about pricing and sales.
 
-#### How Hedera Can Help
+5. **Limited Investment Opportunities**: Farmers often struggle to access capital for expanding their operations or improving their farming techniques.
 
-Hedera can facilitate the creation of a decentralized application that addresses these challenges through the following features:
+## Our Solution
 
-1. **Product Tracking**: The dApp would enable the tracking of agricultural products from farm to table. Each transaction, including details about the product, its origin, and handling, would be recorded on the blockchain. This creates an immutable record that can be accessed by all stakeholders, including farmers, distributors, and consumers.
+MakmurTani utilizes Lisk's blockchain technology to create a decentralized platform that addresses these challenges through:
 
-2. **Smart Contracts for Fair Pricing**: By implementing smart contracts, transactions can be automated based on predefined conditions. For example, when a product is delivered and verified, payment can be automatically released to the farmer. This reduces the reliance on intermediaries and ensures that farmers receive fair compensation.
+1. **RWA Tokenization**: Converting agricultural land, crops, and production into tradable digital tokens on the blockchain, enabling fractional ownership and investment.
 
-3. **Enhanced Traceability**: Consumers would be able to scan a QR code on products to access detailed information about their origin, handling, and journey through the supply chain. This transparency can build consumer trust and encourage the purchase of locally sourced products.
+2. **Supply Chain Transparency**: Tracking agricultural products from farm to table with immutable blockchain records, accessible to all stakeholders.
 
-4. **Market Data Access**: The dApp can provide farmers with real-time market data, enabling them to make informed decisions about when and where to sell their products. This can help them optimize pricing and reduce losses.
+3. **Smart Contracts for Fair Pricing**: Automating transactions based on predefined conditions, ensuring farmers receive fair compensation.
 
-5. **Community Engagement**: The platform can foster a community of producers and consumers who can share information, experiences, and best practices. This can enhance collaboration and innovation within the agricultural sector.
+4. **Real-time Market Data**: Providing farmers with access to current market information to make informed decisions.
 
-#### Potential Impact
+5. **DeFi Microloans**: Enabling farmers to access capital by using their tokenized assets as collateral.
 
-Implementing a decentralized agricultural supply chain platform using Hedera can lead to significant benefits:
+## Technology Stack
 
-- **Empowered Farmers**: With better access to market information and fair pricing, farmers can improve their livelihoods and invest in better farming practices.
+- **Blockchain**: Lisk L2 solution for low-cost, high-speed transactions
+- **Smart Contracts**: Solidity-based contracts for tokenization and marketplace functionality
+- **Frontend**: Next.js Progressive Web App (PWA) with bilingual support (Indonesian/English)
+- **Backend**: Supabase for database management and authentication
+- **Integration**: IoT sensors for real-time crop monitoring and quality assurance
 
-- **Reduced Fraud and Waste**: Enhanced traceability can reduce the incidence of counterfeit products and ensure that consumers receive high-quality goods.
+## Key Features
 
-- **Increased Consumer Trust**: Transparency in the supply chain can build trust between consumers and producers, encouraging the purchase of local products.
+- Tokenized representation of agricultural assets
+- Transparent supply chain tracking
+- Marketplace for trading tokenized assets
+- Microfinancing platform for farmers
+- Data analytics for market insights
+- Bilingual interface optimized for rural connectivity
 
-- **Economic Growth**: By improving the efficiency of the agricultural supply chain, the overall economy can benefit from reduced costs and increased productivity.
+## Getting Started
 
-### Conclusion
+- Explore the [contracts](./contracts) directory for smart contract development
+- Check out the [frontend](./frontend) directory for the Next.js PWA implementation
 
-By leveraging Lisk and Hedera's blockchain technology, Indonesia can create a transparent and efficient agricultural supply chain that benefits all stakeholders involved. This innovative approach not only addresses existing challenges but also empowers farmers and enhances consumer trust, ultimately contributing to the country's economic development.
+## Join Us
+
+MakmurTani is applying to the Lisk Spark Incubator program, Indonesia's first government-backed Web3 incubator. Join us in revolutionizing the agricultural sector and empowering Indonesian farmers through blockchain technology.

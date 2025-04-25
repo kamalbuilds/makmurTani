@@ -7,10 +7,10 @@ export function SiteFooter() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <div className="mb-4 lg:mb-0">
-            <h2 className="text-lg font-bold">IndonesianFarmerRevolution@2024</h2>
+            <h2 className="text-lg font-bold">MakmurTani@2025</h2>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-center">
-            <Link href="/farm" className="text-white hover:text-gray-400 mx-2 my-1 lg:my-0">FarmerRevolution @2024</Link>
+            <Link href="/farm" className="text-white hover:text-gray-400 mx-2 my-1 lg:my-0">FarmerRevolution @2025</Link>
             {/* <Link href="/explore" className="text-white hover:text-gray-400 mx-2 my-1 lg:my-0">Invest</Link>
             <Link href="/about" className="text-white hover:text-gray-400 mx-2 my-1 lg:my-0">About Us</Link>
             <Link href="/contact" className="text-white hover:text-gray-400 mx-2 my-1 lg:my-0">Contact</Link> */}
