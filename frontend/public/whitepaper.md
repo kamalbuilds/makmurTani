@@ -87,7 +87,7 @@ Indonesia's agricultural sector presents a significant opportunity for blockchai
 
 MakmurTani creates a comprehensive ecosystem that connects farmers, investors, financial institutions, and consumers through blockchain technology. The platform consists of four primary components:
 
-![System Architecture Diagram](/images/system-architecture.png)
+![sys-architecture](https://github.com/user-attachments/assets/b1f5be63-3b8a-42eb-8080-bd1524ffe464)
 
 #### 2.1.1 RWA Tokenization Protocol
 
