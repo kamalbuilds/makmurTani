@@ -14,7 +14,7 @@
     "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/postcss": "^4.1.4",
     "@tanstack/react-query": "^5.74.4",
-    "@xellar/kit": "^2.0.8",
+    "@xellar/kit": "^1.3.3",
     "clsx": "^2.1.1",
     "ethers": "^6.13.5",
     "lucide-react": "^0.503.0",
@@ -30,7 +30,7 @@
     "tailwind-merge": "^3.2.0",
     "tailwindcss-animate": "^1.0.7",
     "viem": "2.x",
-    "wagmi": "^2.15.0",
+ "wagmi": "^2.14.16",
     "zustand": "^4.4.7"
   },
   "devDependencies": {

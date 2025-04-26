@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Wallet } from 'lucide-react';
 import { useAccount, useConnect, useDisconnect } from 'wagmi';
+import { ConnectButton } from '@xellar/kit';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -14,38 +15,6 @@ const navigation = [
   { name: 'Track', href: '/track' },
   { name: 'About', href: '/about' },
 ];
-
-// Simple connect button component using wagmi hooks
-function ConnectButton({ className }: { className?: string }) {
-  const { address, isConnected } = useAccount();
-  const { connect, connectors, isPending } = useConnect();
-  const { disconnect } = useDisconnect();
-
-  if (isConnected && address) {
-    return (
-      <button
-        onClick={() => disconnect()}
-        className={className || "bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors"}
-      >
-        {address.substring(0, 6)}...{address.substring(address.length - 4)}
-      </button>
-    );
-  }
-
-  return (
-    <button
-      onClick={() => {
-        if (connectors.length > 0) {
-          connect({ connector: connectors[0] });
-        }
-      }}
-      disabled={isPending || connectors.length === 0}
-      className={className || "bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors"}
-    >
-      {isPending ? 'Connecting...' : 'Connect Wallet'}
-    </button>
-  );
-}
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -99,7 +68,7 @@ export default function Navbar() {
         </div>
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <ConnectButton className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors" />
+          <ConnectButton />
         </div>
       </nav>
       
@@ -149,7 +118,7 @@ export default function Navbar() {
                 ))}
               </div>
               <div className="py-6 px-6">
-                <ConnectButton className="block w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-center transition-colors" />
+                <ConnectButton />
               </div>
             </div>
           </div>

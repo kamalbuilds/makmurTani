@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { Providers } from './providers';
 import { darkTheme } from '@xellar/kit';
 import { XellarKitProvider } from '@xellar/kit';
+import { Web3Provider } from '@/config/Web3Provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,13 +28,13 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50`}>
         <Providers>
-          <XellarKitProvider theme={darkTheme}>
+          <Web3Provider>
             <Navbar />
             <main className="flex-grow">
               {children}
           </main>
           <Footer />
-          </XellarKitProvider>
+          </Web3Provider>
         </Providers>
       </body>
     </html>

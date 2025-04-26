@@ -52,17 +52,6 @@ export default function Dashboard() {
     fetchData();
   }, []);
 
-  // Handle wallet connection
-  const connectWallet = async () => {
-    try {
-      const address = await getWalletAddress();
-      if (address) {
-        window.location.reload();
-      }
-    } catch (error) {
-      console.error('Error connecting wallet:', error);
-    }
-  };
 
   if (loading) {
     return (

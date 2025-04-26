@@ -3,8 +3,8 @@
 import { siteConfig } from "@/config/site";
 import Link from "next/link";
 import { useAccount } from "wagmi";
-import { SiteHeaderConnectButton } from "./site-header-connect-button";
 import { ThemeToggle } from "./theme-toggle";
+import { ConnectButton } from '@xellar/kit';
 
 export function SiteHeader() {
   const { address } = useAccount();
@@ -21,7 +21,7 @@ export function SiteHeader() {
           </Link>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-8">
-          <SiteHeaderConnectButton />
+          <ConnectButton />
           <Link
             href={`/explore`}
             className="hidden md:block text-sm font-medium text-muted-foreground"

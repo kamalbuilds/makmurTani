@@ -9,7 +9,7 @@
         "@supabase/supabase-js": "^2.49.4",
         "@tailwindcss/postcss": "^4.1.4",
         "@tanstack/react-query": "^5.74.4",
-        "@xellar/kit": "^2.0.8",
+        "@xellar/kit": "^1.3.3",
         "clsx": "^2.1.1",
         "ethers": "^6.13.5",
         "lucide-react": "^0.503.0",
@@ -25,7 +25,7 @@
         "tailwind-merge": "^3.2.0",
         "tailwindcss-animate": "^1.0.7",
         "viem": "2.x",
-        "wagmi": "^2.15.0",
+        "wagmi": "^2.14.16",
         "zustand": "^4.4.7",
       },
       "devDependencies": {
@@ -700,9 +700,9 @@
 
     "@webassemblyjs/wast-printer": ["@webassemblyjs/wast-printer@1.12.1", "", { "dependencies": { "@webassemblyjs/ast": "1.12.1", "@xtuc/long": "4.2.2" } }, ""],
 
-    "@xellar/kit": ["@xellar/kit@2.0.8", "", { "dependencies": { "@react-oauth/google": "^0.12.1", "@xellar/sdk": "4.2.14", "clsx": "^2.1.1", "input-otp": "^1.4.2", "js-cookie": "^3.0.5", "motion": "^11.17.0", "qrcode": "^1.5.4", "react-remove-scroll": "^2.6.2", "styled-components": "^6.1.14", "zustand": "^5.0.3" }, "peerDependencies": { "@tanstack/react-query": ">=5.0.0", "react": ">=18", "react-dom": ">=18", "viem": "^2.22.x", "wagmi": "^2.x" } }, "sha512-PKde38YeqH090QEHF0ecezw2n4hkY0IS4MXQTnTY9t2cAEEblKFQqplosSYda7wZ5EWbBtuI5crXs89VRtJnrg=="],
+    "@xellar/kit": ["@xellar/kit@1.3.3", "", { "dependencies": { "@react-oauth/google": "^0.12.1", "@xellar/sdk": "4.2.12", "clsx": "^2.1.1", "input-otp": "^1.4.2", "js-cookie": "^3.0.5", "motion": "^11.17.0", "qrcode": "^1.5.4", "react-remove-scroll": "^2.6.2", "styled-components": "^6.1.14", "zustand": "^5.0.3" }, "peerDependencies": { "@tanstack/react-query": ">=5.0.0", "react": ">=18", "react-dom": ">=18", "viem": "^2.22.x", "wagmi": "^2.x" } }, "sha512-z/SmT/BFCJf543cPe/WFVS/ojS1dOPMY9eMGd8b9ZHtjMXN15k/kYjZkcD7YXlpMTlGKtI5vZILnFZCOWv5uBw=="],
 
-    "@xellar/sdk": ["@xellar/sdk@4.2.14", "", { "dependencies": { "axios": "^1.7.7" }, "peerDependencies": { "react-native-quick-crypto": "^0.7.6" } }, "sha512-OoZo54xGZOcDuTSmy36JWamFi5Q6PzW1xq1fObuouOTJEY5eEYdfgqbICAB6n7cPTZlGVBle5Mn8DgfZ/eu7lg=="],
+    "@xellar/sdk": ["@xellar/sdk@4.2.12", "", { "dependencies": { "axios": "^1.7.7" }, "peerDependencies": { "react-native-quick-crypto": "^0.7.6" } }, "sha512-BtEEqP33fvGMkkrtkCZL7qMU5CrpxEwlPAqNsYAFk/OESxzY0BhxYI7SQRHCKhUtiJyo3EbVm2TdD13QvhmXuQ=="],
 
     "@xtuc/ieee754": ["@xtuc/ieee754@1.2.0", "", {}, ""],
 
