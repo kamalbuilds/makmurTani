@@ -4,16 +4,16 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams, useRouter } from 'next/navigation';
-import { 
-  MapPin, 
-  TrendingUp, 
-  Calendar, 
-  Users, 
-  FileText, 
-  BarChart3, 
-  ExternalLink, 
-  Clock, 
-  Share2, 
+import {
+  MapPin,
+  TrendingUp,
+  Calendar,
+  Users,
+  FileText,
+  BarChart3,
+  ExternalLink,
+  Clock,
+  Share2,
   ChevronLeft,
   Leaf,
   Check,
@@ -45,9 +45,9 @@ interface TokenAsset {
   harvestDate?: string;
   contractAddress: string;
   tokenStandard: string;
-  history: { 
-    date: string; 
-    event: string; 
+  history: {
+    date: string;
+    event: string;
     txHash: string;
   }[];
   details: {
@@ -69,7 +69,7 @@ const demoToken: TokenAsset = {
   symbol: 'UBUD',
   description: 'This fertile paddy field is located in Ubud, Bali, featuring a comprehensive irrigation system and organic certification. The land has been cultivated for rice production for over 30 years and has consistently demonstrated high yields. The property includes access to natural water sources and is part of a traditional Balinese Subak irrigation system.',
   location: 'Ubud, Bali',
-  imageUrl: '/assets/rice-field.jpg',
+  imageUrl: '/farms/paddy_field.webp',
   price: 12000,
   supply: 1000,
   soldPercentage: 67,
@@ -114,7 +114,7 @@ export default function TokenDetailPage() {
   const params = useParams();
   const router = useRouter();
   const tokenId = params.id as string;
-  
+
   const [token, setToken] = useState<TokenAsset | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('overview');
@@ -122,7 +122,7 @@ export default function TokenDetailPage() {
   const [totalCost, setTotalCost] = useState(0);
   const [isInvesting, setIsInvesting] = useState(false);
   const [selectedImage, setSelectedImage] = useState('');
-  
+
   // Fetch token data
   useEffect(() => {
     // Simulate API call
@@ -130,7 +130,7 @@ export default function TokenDetailPage() {
       // In a real app, this would be an API call like: 
       // const response = await fetch(`/api/tokens/${tokenId}`);
       // const data = await response.json();
-      
+
       // Using demo data for now
       setTimeout(() => {
         setToken(demoToken);
@@ -138,28 +138,28 @@ export default function TokenDetailPage() {
         setIsLoading(false);
       }, 800);
     };
-    
+
     fetchToken();
   }, [tokenId]);
-  
+
   // Calculate total cost when investment amount changes
   useEffect(() => {
     if (token) {
       setTotalCost(investmentAmount * token.price);
     }
   }, [investmentAmount, token]);
-  
+
   // Handle investment submission
   const handleInvest = async () => {
     setIsInvesting(true);
-    
+
     // Simulate blockchain transaction
     setTimeout(() => {
       setIsInvesting(false);
       router.push('/investment/success?amount=' + investmentAmount + '&tokenId=' + tokenId);
     }, 2000);
   };
-  
+
   // Handle investment amount changes
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.target.value);
@@ -167,7 +167,7 @@ export default function TokenDetailPage() {
       setInvestmentAmount(value);
     }
   };
-  
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -175,7 +175,7 @@ export default function TokenDetailPage() {
       </div>
     );
   }
-  
+
   if (!token) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
@@ -188,7 +188,7 @@ export default function TokenDetailPage() {
       </div>
     );
   }
-  
+
   const availableTokens = token.supply - (token.supply * token.soldPercentage / 100);
 
   return (
@@ -200,7 +200,7 @@ export default function TokenDetailPage() {
           Back to Marketplace
         </Link>
       </div>
-      
+
       <div className="container mx-auto px-4">
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
           {/* Hero section */}
@@ -208,10 +208,10 @@ export default function TokenDetailPage() {
             {/* Left: Image Gallery */}
             <div className="md:w-1/2">
               <div className="relative h-64 md:h-96 w-full">
-                <Image 
-                  src={selectedImage} 
-                  alt={token.name} 
-                  className="object-cover" 
+                <Image
+                  src={selectedImage}
+                  alt={token.name}
+                  className="object-cover"
                   fill
                   priority
                 />
@@ -219,17 +219,17 @@ export default function TokenDetailPage() {
                   {token.type}
                 </div>
               </div>
-              
+
               {/* Thumbnail gallery */}
               <div className="p-4 flex space-x-2 overflow-x-auto">
-                <div 
+                <div
                   className={`relative h-16 w-16 rounded-md overflow-hidden cursor-pointer border-2 ${selectedImage === token.imageUrl ? 'border-green-600' : 'border-transparent'}`}
                   onClick={() => setSelectedImage(token.imageUrl)}
                 >
                   <Image src={token.imageUrl} alt="Main" fill className="object-cover" />
                 </div>
                 {token.gallery.map((img, index) => (
-                  <div 
+                  <div
                     key={index}
                     className={`relative h-16 w-16 rounded-md overflow-hidden cursor-pointer border-2 ${selectedImage === img ? 'border-green-600' : 'border-transparent'}`}
                     onClick={() => setSelectedImage(img)}
@@ -239,7 +239,7 @@ export default function TokenDetailPage() {
                 ))}
               </div>
             </div>
-            
+
             {/* Right: Token Details */}
             <div className="md:w-1/2 p-6">
               <div className="flex items-center mb-2">
@@ -250,14 +250,14 @@ export default function TokenDetailPage() {
                   Token ID: {token.id}
                 </span>
               </div>
-              
+
               <h1 className="text-2xl md:text-3xl font-bold mb-2">{token.name}</h1>
-              
+
               <div className="flex items-center text-sm text-gray-600 mb-4">
                 <MapPin className="h-4 w-4 mr-1" />
                 <span>{token.location}</span>
               </div>
-              
+
               <div className="flex flex-wrap gap-1 mb-4">
                 {token.tags.map((tag, i) => (
                   <span
@@ -268,7 +268,7 @@ export default function TokenDetailPage() {
                   </span>
                 ))}
               </div>
-              
+
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
                 <div className="bg-gray-50 p-3 rounded-lg">
                   <div className="text-sm text-gray-500">Token Price</div>
@@ -276,7 +276,7 @@ export default function TokenDetailPage() {
                     {new Intl.NumberFormat('id-ID').format(token.price)} IDR
                   </div>
                 </div>
-                
+
                 {token.yield && (
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <div className="text-sm text-gray-500">Est. Annual Yield</div>
@@ -286,7 +286,7 @@ export default function TokenDetailPage() {
                     </div>
                   </div>
                 )}
-                
+
                 {token.area && (
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <div className="text-sm text-gray-500">Land Area</div>
@@ -295,7 +295,7 @@ export default function TokenDetailPage() {
                     </div>
                   </div>
                 )}
-                
+
                 {token.harvestDate && (
                   <div className="bg-gray-50 p-3 rounded-lg">
                     <div className="text-sm text-gray-500">Harvest Date</div>
@@ -306,7 +306,7 @@ export default function TokenDetailPage() {
                   </div>
                 )}
               </div>
-              
+
               {/* Progress bar */}
               <div className="mb-6">
                 <div className="flex justify-between text-sm mb-1">
@@ -314,13 +314,13 @@ export default function TokenDetailPage() {
                   <span>{availableTokens} of {token.supply} Available</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2.5">
-                  <div 
-                    className="bg-green-600 h-2.5 rounded-full" 
+                  <div
+                    className="bg-green-600 h-2.5 rounded-full"
                     style={{ width: `${token.soldPercentage}%` }}
                   ></div>
                 </div>
               </div>
-              
+
               {/* Creator info */}
               <div className="flex items-center p-3 bg-gray-50 rounded-lg mb-6">
                 <div className="relative h-12 w-12 rounded-full overflow-hidden mr-3">
@@ -343,11 +343,11 @@ export default function TokenDetailPage() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Investment form */}
               <div className="border border-gray-200 rounded-lg p-4 mb-4">
                 <h3 className="font-medium mb-3">Invest in this asset</h3>
-                
+
                 <div className="mb-4">
                   <label htmlFor="amount" className="block text-sm text-gray-600 mb-1">
                     Number of tokens to purchase:
@@ -367,14 +367,14 @@ export default function TokenDetailPage() {
                     Max: {availableTokens} tokens
                   </p>
                 </div>
-                
+
                 <div className="flex justify-between items-center mb-4 p-3 bg-gray-50 rounded-lg">
                   <span className="text-gray-700">Total cost:</span>
                   <span className="font-bold text-green-700">
                     {new Intl.NumberFormat('id-ID').format(totalCost)} IDR
                   </span>
                 </div>
-                
+
                 <button
                   onClick={handleInvest}
                   disabled={isInvesting}
@@ -390,7 +390,7 @@ export default function TokenDetailPage() {
                   )}
                 </button>
               </div>
-              
+
               <div className="text-sm text-gray-500 flex items-start">
                 <Info className="h-4 w-4 mr-2 mt-0.5 flex-shrink-0" />
                 <p>
@@ -399,7 +399,7 @@ export default function TokenDetailPage() {
               </div>
             </div>
           </div>
-          
+
           {/* Tabs */}
           <div className="border-t border-gray-200">
             <div className="flex overflow-x-auto">
@@ -428,7 +428,7 @@ export default function TokenDetailPage() {
                 Transaction History
               </button>
             </div>
-            
+
             <div className="p-6">
               {/* Overview Tab */}
               {activeTab === 'overview' && (
@@ -437,7 +437,7 @@ export default function TokenDetailPage() {
                   <p className="text-gray-700 mb-6">
                     {token.description}
                   </p>
-                  
+
                   <h3 className="text-lg font-semibold mb-2">Tokenization Details</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div className="flex items-start">
@@ -459,7 +459,7 @@ export default function TokenDetailPage() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <h3 className="text-lg font-semibold mb-2">Investment Highlights</h3>
                   <ul className="list-none space-y-3 mb-6">
                     <li className="flex items-start">
@@ -487,16 +487,16 @@ export default function TokenDetailPage() {
                       <span>Consistent historical yields of over 5 tons per hectare</span>
                     </li>
                   </ul>
-                  
+
                   <div className="flex justify-between mt-4">
-                    <Link 
-                      href={`https://explorer.lisk.com/tx/${token.history[0].txHash}`} 
+                    <Link
+                      href={`https://explorer.lisk.com/tx/${token.history[0].txHash}`}
                       target="_blank"
                       className="text-green-600 hover:text-green-700 flex items-center text-sm"
                     >
                       View on Explorer <ExternalLink className="h-3 w-3 ml-1" />
                     </Link>
-                    <button 
+                    <button
                       className="text-green-600 hover:text-green-700 flex items-center text-sm"
                       onClick={() => {
                         navigator.clipboard.writeText(window.location.href);
@@ -508,12 +508,12 @@ export default function TokenDetailPage() {
                   </div>
                 </div>
               )}
-              
+
               {/* Details Tab */}
               {activeTab === 'details' && (
                 <div>
                   <h2 className="text-xl font-bold mb-4">Asset Specifications</h2>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     {Object.entries(token.details).map(([key, value]) => (
                       <div key={key} className="border-b border-gray-100 pb-3">
@@ -522,7 +522,7 @@ export default function TokenDetailPage() {
                       </div>
                     ))}
                   </div>
-                  
+
                   {token.type === 'LAND' && (
                     <div className="mb-6">
                       <h3 className="text-lg font-semibold mb-3">Location Map</h3>
@@ -533,12 +533,12 @@ export default function TokenDetailPage() {
                   )}
                 </div>
               )}
-              
+
               {/* Documents Tab */}
               {activeTab === 'documents' && (
                 <div>
                   <h2 className="text-xl font-bold mb-4">Legal Documents & Certifications</h2>
-                  
+
                   <div className="space-y-4 mb-6">
                     {token.documents.map((doc, index) => (
                       <div key={index} className="border border-gray-200 rounded-lg p-4 flex items-center justify-between">
@@ -551,8 +551,8 @@ export default function TokenDetailPage() {
                             <div className="text-xs text-gray-500 uppercase">{doc.type}</div>
                           </div>
                         </div>
-                        <Link 
-                          href={doc.url} 
+                        <Link
+                          href={doc.url}
                           target="_blank"
                           className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm py-2 px-4 rounded-lg"
                         >
@@ -561,26 +561,26 @@ export default function TokenDetailPage() {
                       </div>
                     ))}
                   </div>
-                  
+
                   <div className="bg-blue-50 p-4 rounded-lg text-blue-800 text-sm flex items-start">
                     <Info className="h-5 w-5 mr-2 flex-shrink-0" />
                     <p>
-                      All documents have been verified by our legal team and stored on IPFS for immutable record-keeping. 
+                      All documents have been verified by our legal team and stored on IPFS for immutable record-keeping.
                       Each document is linked to the token smart contract for maximum transparency.
                     </p>
                   </div>
                 </div>
               )}
-              
+
               {/* History Tab */}
               {activeTab === 'history' && (
                 <div>
                   <h2 className="text-xl font-bold mb-4">Transaction History</h2>
-                  
+
                   <div className="relative">
                     {/* Timeline line */}
                     <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gray-200"></div>
-                    
+
                     {/* Timeline events */}
                     <div className="space-y-6">
                       {token.history.map((event, index) => (
@@ -594,9 +594,9 @@ export default function TokenDetailPage() {
                                 <div className="font-medium">{event.event}</div>
                                 <div className="text-sm text-gray-500">{event.date}</div>
                               </div>
-                              <Link 
+                              <Link
                                 href={`https://explorer.lisk.com/tx/${event.txHash}`}
-                                target="_blank" 
+                                target="_blank"
                                 className="text-xs text-green-600 hover:text-green-700 flex items-center"
                               >
                                 {event.txHash.substring(0, 6)}...{event.txHash.substring(event.txHash.length - 4)}
@@ -613,14 +613,14 @@ export default function TokenDetailPage() {
             </div>
           </div>
         </div>
-        
+
         {/* Similar Assets */}
         <div className="mt-12">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
             <Leaf className="mr-2 h-5 w-5 text-green-600" />
             Similar Assets
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Placeholder cards for similar assets */}
             {[1, 2, 3].map((i) => (
@@ -643,7 +643,7 @@ export default function TokenDetailPage() {
                     </div>
                     <div className="text-sm text-gray-600">Yield: {6 + i}%</div>
                   </div>
-                  <Link 
+                  <Link
                     href={`/token/${i + 10}`}
                     className="block bg-green-600 hover:bg-green-700 text-white text-center py-2 px-3 rounded-lg transition-colors mt-3"
                   >

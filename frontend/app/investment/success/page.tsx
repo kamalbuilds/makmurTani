@@ -11,16 +11,16 @@ export default function InvestmentSuccessPage() {
   const router = useRouter();
   const amount = searchParams.get('amount');
   const tokenId = searchParams.get('tokenId');
-  
+
   const [isLoading, setIsLoading] = useState(true);
   const [transactionHash, setTransactionHash] = useState('');
   const [token, setToken] = useState({
     name: 'Paddy Field in Ubud',
     symbol: 'UBUD',
     price: 12000,
-    imageUrl: '/assets/rice-field.jpg'
+    imageUrl: '/farms/paddy_field.webp'
   });
-  
+
   // Simulate fetching transaction details
   useEffect(() => {
     // In a real app, this would verify the transaction on the blockchain
@@ -29,9 +29,9 @@ export default function InvestmentSuccessPage() {
       setIsLoading(false);
     }, 1500);
   }, []);
-  
+
   const totalAmount = amount ? parseInt(amount) * token.price : 0;
-  
+
   if (isLoading) {
     return (
       <div className="min-h-screen flex justify-center items-center">
@@ -42,7 +42,7 @@ export default function InvestmentSuccessPage() {
       </div>
     );
   }
-  
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
@@ -52,19 +52,19 @@ export default function InvestmentSuccessPage() {
               <Check className="h-10 w-10 text-green-600" />
             </div>
           </div>
-          
+
           <h1 className="text-2xl font-bold text-center mb-2">Investment Successful!</h1>
           <p className="text-center text-gray-600 mb-8">
             Your transaction has been confirmed on the blockchain
           </p>
-          
+
           <div className="border border-gray-200 rounded-lg p-4 mb-6">
             <div className="flex items-center space-x-4 mb-4">
               <div className="relative h-14 w-14 rounded-md overflow-hidden">
-                <Image 
-                  src={token.imageUrl} 
-                  alt={token.name} 
-                  fill 
+                <Image
+                  src={token.imageUrl}
+                  alt={token.name}
+                  fill
                   className="object-cover"
                 />
               </div>
@@ -73,7 +73,7 @@ export default function InvestmentSuccessPage() {
                 <p className="text-sm text-gray-500">${token.symbol}</p>
               </div>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-gray-600">Tokens purchased:</span>
@@ -91,7 +91,7 @@ export default function InvestmentSuccessPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="bg-gray-50 rounded-lg p-4 mb-6">
             <h3 className="font-medium mb-2">Transaction Details</h3>
             <div className="space-y-2">
@@ -108,8 +108,8 @@ export default function InvestmentSuccessPage() {
                 </span>
               </div>
               <div className="flex justify-end mt-1">
-                <Link 
-                  href={`https://explorer.lisk.com/tx/${transactionHash}`} 
+                <Link
+                  href={`https://explorer.lisk.com/tx/${transactionHash}`}
                   target="_blank"
                   className="text-sm text-green-600 hover:text-green-700 flex items-center"
                 >
@@ -118,7 +118,7 @@ export default function InvestmentSuccessPage() {
               </div>
             </div>
           </div>
-          
+
           <div className="space-y-3">
             <Link
               href={`/token/${tokenId}`}
@@ -132,8 +132,8 @@ export default function InvestmentSuccessPage() {
             >
               Go to My Portfolio <ArrowRight className="h-4 w-4 ml-2" />
             </Link>
-            <Link 
-              href="/marketplace" 
+            <Link
+              href="/marketplace"
               className="flex items-center justify-center text-gray-600 hover:text-gray-800 py-2"
             >
               <ChevronLeft className="h-4 w-4 mr-1" />
@@ -142,7 +142,7 @@ export default function InvestmentSuccessPage() {
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-md mx-auto mt-8 text-center">
         <h3 className="font-medium text-gray-800 mb-3">What &aptos;s Next?</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

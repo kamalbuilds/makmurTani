@@ -39,7 +39,7 @@ export default function InvestPage() {
           daysLeft: 12,
           roi: '8.5%',
           duration: '9 months',
-          image: 'https://placehold.co/600x400/1B5E20/FFFFFF.png?text=Rice+Farming',
+          image: '/farms/rice_farming.jpg',
           farmer: 'Pak Wayan'
         },
         {
@@ -53,7 +53,7 @@ export default function InvestPage() {
           daysLeft: 5,
           roi: '12%',
           duration: '24 months',
-          image: 'https://placehold.co/600x400/1B5E20/FFFFFF.png?text=Coffee+Plantation',
+          image: '/farms/coffee_toraja.webp',
           farmer: 'Bu Siti'
         },
         {
@@ -67,7 +67,7 @@ export default function InvestPage() {
           daysLeft: 20,
           roi: '10%',
           duration: '6 months',
-          image: 'https://placehold.co/600x400/1B5E20/FFFFFF.png?text=Hydroponic+Farm',
+          image: '/farms/hydroponic_veg.jpg',
           farmer: 'Pak Joko'
         },
         {
@@ -81,7 +81,7 @@ export default function InvestPage() {
           daysLeft: 9,
           roi: '9.5%',
           duration: '36 months',
-          image: 'https://placehold.co/600x400/1B5E20/FFFFFF.png?text=Fruit+Orchard',
+          image: '/farms/orchard.webp',
           farmer: 'Bu Ratna'
         }
       ]);
@@ -111,25 +111,25 @@ export default function InvestPage() {
       {/* Tabs */}
       <div className="border-b border-gray-200 mb-6">
         <div className="flex flex-wrap -mb-px">
-          <button 
+          <button
             className={`mr-2 py-2 px-4 text-sm font-medium ${activeTab === 'all' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setActiveTab('all')}
           >
             All Opportunities
           </button>
-          <button 
+          <button
             className={`mr-2 py-2 px-4 text-sm font-medium ${activeTab === 'almostFunded' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setActiveTab('almostFunded')}
           >
             Almost Funded
           </button>
-          <button 
+          <button
             className={`mr-2 py-2 px-4 text-sm font-medium ${activeTab === 'highROI' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setActiveTab('highROI')}
           >
             High ROI
           </button>
-          <button 
+          <button
             className={`mr-2 py-2 px-4 text-sm font-medium ${activeTab === 'endingSoon' ? 'text-green-600 border-b-2 border-green-600' : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => setActiveTab('endingSoon')}
           >
@@ -160,20 +160,20 @@ export default function InvestPage() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-1">{opportunity.title}</h3>
                 <p className="text-gray-600 mb-2">{opportunity.location}</p>
                 <p className="text-sm text-gray-700 mb-4">{opportunity.description}</p>
-                
+
                 <div className="mb-3">
                   <div className="flex justify-between text-sm mb-1">
                     <span>Progress</span>
                     <span>{opportunity.raisedAmount} of {opportunity.targetAmount}</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div 
-                      className="bg-green-600 h-2 rounded-full" 
+                    <div
+                      className="bg-green-600 h-2 rounded-full"
                       style={{ width: `${opportunity.percentageRaised}%` }}
                     ></div>
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-2 gap-2 mb-4">
                   <div className="bg-green-50 p-2 rounded">
                     <p className="text-xs text-gray-500">Expected ROI</p>
@@ -192,7 +192,7 @@ export default function InvestPage() {
                     <p className="text-sm font-bold text-green-700">{opportunity.farmer}</p>
                   </div>
                 </div>
-                
+
                 <button className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition-colors">
                   Invest Now
                 </button>
