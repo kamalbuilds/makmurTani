@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getWalletAddress } from '@/lib/blockchain';
 import { getUserByWallet, getFarmlandsByOwner, getListingsBySeller, getLoansByBorrower, User, FarmlandRecord, MarketplaceListing, Loan } from '@/lib/supabase';
+import { ConnectButton } from '@xellar/kit';
 
 export default function Dashboard() {
   const [loading, setLoading] = useState(true);
@@ -79,12 +80,7 @@ export default function Dashboard() {
         <div className="flex flex-col items-center justify-center h-64 text-center">
           <h1 className="text-3xl font-bold mb-6">Welcome to MakmurTani Dashboard</h1>
           <p className="text-xl mb-8">Connect your wallet to access your assets, listings, and loans</p>
-          <button
-            onClick={connectWallet}
-            className="bg-green-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
-          >
-            Connect Wallet
-          </button>
+          <ConnectButton />
         </div>
       </div>
     );
@@ -143,7 +139,7 @@ export default function Dashboard() {
                 Register Farmland
               </Link>
             </div>
-            
+          
             {farmlands.length === 0 ? (
               <div className="text-center py-8 text-gray-500">
                 <p>No registered assets yet.</p>
@@ -285,4 +281,8 @@ export default function Dashboard() {
             )}
           </>
         )}
+      </div>
+    </div>
+  );
+}
  
