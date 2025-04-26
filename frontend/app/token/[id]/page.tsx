@@ -76,7 +76,7 @@ const demoToken: TokenAsset = {
   creator: {
     name: 'Wayan Dharma',
     rating: 4.8,
-    imageUrl: '/assets/farmer1.jpg',
+    imageUrl: '/farmers/farmer1.jpg',
     address: '0x3D9d0caA5F8e7282EFB219f5F11AdE5E8b0D2768'
   },
   tags: ['Organic', 'Paddy', 'Irrigation', 'Sustainable'],
@@ -103,10 +103,9 @@ const demoToken: TokenAsset = {
     { title: 'Yield History', url: '/documents/yield-history.xlsx', type: 'excel' }
   ],
   gallery: [
-    '/assets/rice-field-1.jpg',
-    '/assets/rice-field-2.jpg',
-    '/assets/rice-field-3.jpg',
-    '/assets/rice-field-4.jpg'
+    '/farms/paddy_field_2.jpg',
+    '/farms/paddy_field_3.jpeg',
+    '/farms/paddy_field_4.jpeg',
   ]
 };
 
