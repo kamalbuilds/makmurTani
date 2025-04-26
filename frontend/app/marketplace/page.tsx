@@ -37,14 +37,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'UBUD',
     description: 'Fertile paddy field with irrigation system in Ubud, Bali',
     location: 'Ubud, Bali',
-    imageUrl: '/assets/rice-field.jpg',
+    imageUrl: '/farms/paddy_field.webp',
     price: 12000,
     supply: 1000,
     soldPercentage: 67,
     creator: {
       name: 'Wayan Dharma',
       rating: 4.8,
-      imageUrl: '/assets/farmer1.jpg'
+      imageUrl: '/farmers/farmer1.jpg'
     },
     tags: ['Organic', 'Paddy', 'Irrigation'],
     yield: 7.5,
@@ -57,14 +57,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'KOPI',
     description: 'Premium Arabica coffee beans from Toraja highlands',
     location: 'Toraja, Sulawesi',
-    imageUrl: '/assets/coffee.jpg',
+    imageUrl: '/farms/coffee_toraja.webp',
     price: 8500,
     supply: 500,
     soldPercentage: 42,
     creator: {
       name: 'Abdul Rahman',
       rating: 4.6,
-      imageUrl: '/assets/farmer2.jpg'
+      imageUrl: '/farmers/farmer2.jpg'
     },
     tags: ['Arabica', 'Specialty', 'Export Quality'],
     yield: 9.2,
@@ -77,14 +77,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'SPICE',
     description: 'Traditional spice garden with vanilla, cloves and nutmeg',
     location: 'Ambon, Maluku',
-    imageUrl: '/assets/spices.jpg',
+    imageUrl: '/farms/spice_island.webp',
     price: 9500,
     supply: 750,
     soldPercentage: 28,
     creator: {
       name: 'Sarah Wulandari',
       rating: 4.3,
-      imageUrl: '/assets/farmer3.jpg'
+      imageUrl: '/farmers/farmer3.jpg'
     },
     tags: ['Spices', 'Vanilla', 'Cloves'],
     yield: 6.8,
@@ -97,14 +97,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'CACAO',
     description: 'Sustainably grown cocoa beans from West Papua',
     location: 'Manokwari, Papua',
-    imageUrl: '/assets/cocoa.jpg',
+    imageUrl: '/farms/cocoa.webp',
     price: 7800,
     supply: 800,
     soldPercentage: 51,
     creator: {
       name: 'Yusuf Papare',
       rating: 4.5,
-      imageUrl: '/assets/farmer4.jpg'
+      imageUrl: '/farmers/farmer4.jpg'
     },
     tags: ['Organic', 'Rainforest Alliance', 'Fair Trade'],
     yield: 8.4,
@@ -117,14 +117,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'MILL',
     description: 'Modern rice mill serving farming communities in East Java',
     location: 'Malang, East Java',
-    imageUrl: '/assets/rice-mill.jpg',
+    imageUrl: '/farms/rice_mill.webp',
     price: 15000,
     supply: 300,
     soldPercentage: 82,
     creator: {
       name: 'Farming Cooperative Malang',
       rating: 4.9,
-      imageUrl: '/assets/cooperative.jpg'
+      imageUrl: '/farmers/farmer5.jpg'
     },
     tags: ['Equipment', 'Milling', 'Community']
   },
@@ -135,14 +135,14 @@ const demoTokens: TokenAsset[] = [
     symbol: 'FRUIT',
     description: 'Established fruit orchard with durian, mangosteen and rambutan',
     location: 'Bogor, West Java',
-    imageUrl: '/assets/orchard.jpg',
+    imageUrl: '/farms/orchard.webp',
     price: 11200,
     supply: 650,
     soldPercentage: 39,
     creator: {
       name: 'Bambang Supriyadi',
       rating: 4.4,
-      imageUrl: '/assets/farmer5.jpg'
+      imageUrl: '/farmers/farmer6.jpg'
     },
     tags: ['Fruits', 'Durian', 'Mangosteen'],
     yield: 8.1,
@@ -185,36 +185,36 @@ export default function MarketplacePage() {
   // Filter and sort assets when filters change
   useEffect(() => {
     let result = [...assets];
-    
+
     // Apply search filter
     if (searchTerm) {
-      result = result.filter(asset => 
+      result = result.filter(asset =>
         asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         asset.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         asset.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
         asset.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
       );
     }
-    
+
     // Apply asset type filter
     if (assetTypeFilter !== 'ALL') {
       result = result.filter(asset => asset.type === assetTypeFilter);
     }
-    
+
     // Apply price range filter
-    result = result.filter(asset => 
+    result = result.filter(asset =>
       asset.price >= priceRange[0] && asset.price <= priceRange[1]
     );
-    
+
     // Apply region filter
     if (selectedRegions.length > 0) {
-      result = result.filter(asset => 
+      result = result.filter(asset =>
         selectedRegions.some(region => asset.location.includes(region))
       );
     }
-    
+
     // Apply sorting
-    switch(sortBy) {
+    switch (sortBy) {
       case 'PRICE_LOW':
         result.sort((a, b) => a.price - b.price);
         break;
@@ -233,111 +233,115 @@ export default function MarketplacePage() {
         result.sort((a, b) => parseInt(b.id) - parseInt(a.id));
         break;
     }
-    
+
     setFilteredAssets(result);
   }, [assets, searchTerm, assetTypeFilter, sortBy, priceRange, selectedRegions]);
 
   // Asset card component
-  const AssetCard = ({ asset }: { asset: TokenAsset }) => (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg">
-      <div className="relative h-48 w-full">
-        <div className="absolute top-0 left-0 bg-green-600 text-white px-3 py-1 rounded-br-lg z-10">
-          {asset.type}
-        </div>
-        <Image 
-          src={asset.imageUrl}
-          alt={asset.name}
-          className="object-cover"
-          layout="fill"
-          placeholder="blur"
-          blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJ5jfZixgAAAABJRU5ErkJggg=="
-        />
-      </div>
-      
-      <div className="p-4">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-semibold line-clamp-1">{asset.name}</h3>
-          <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded">
-            ${asset.symbol}
-          </span>
-        </div>
-        
-        <div className="flex items-center text-sm text-gray-600 mb-2">
-          <MapPin className="h-4 w-4 mr-1" />
-          <span>{asset.location}</span>
-        </div>
-        
-        <p className="text-gray-700 text-sm mb-3 line-clamp-2">
-          {asset.description}
-        </p>
-        
-        <div className="flex flex-wrap gap-1 mb-3">
-          {asset.tags.map((tag, i) => (
-            <span
-              key={i}
-              className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-        
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <div className="text-sm text-gray-500">Token Price</div>
-            <div className="font-semibold text-green-700">
-              {new Intl.NumberFormat('id-ID').format(asset.price)} IDR
-            </div>
+  const AssetCard = ({ asset }: { asset: TokenAsset }) => {
+    console.log("Asset", asset);
+
+    return (
+      <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-lg">
+        <div className="relative h-48 w-full">
+          <div className="absolute top-0 left-0 bg-green-600 text-white px-3 py-1 rounded-br-lg z-10">
+            {asset.type}
           </div>
-          {asset.yield && (
-            <div className="text-right">
-              <div className="text-sm text-gray-500">Est. Yield</div>
-              <div className="font-semibold text-green-700 flex items-center">
-                <TrendingUp className="h-4 w-4 mr-1" />
-                {asset.yield}%
+          <Image
+            src={asset.imageUrl}
+            alt={asset.name}
+            className="object-cover"
+            layout="fill"
+            placeholder="blur"
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFeAJ5jfZixgAAAABJRU5ErkJggg=="
+          />
+        </div>
+
+        <div className="p-4">
+          <div className="flex justify-between items-start mb-2">
+            <h3 className="text-lg font-semibold line-clamp-1">{asset.name}</h3>
+            <span className="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded">
+              ${asset.symbol}
+            </span>
+          </div>
+
+          <div className="flex items-center text-sm text-gray-600 mb-2">
+            <MapPin className="h-4 w-4 mr-1" />
+            <span>{asset.location}</span>
+          </div>
+
+          <p className="text-gray-700 text-sm mb-3 line-clamp-2">
+            {asset.description}
+          </p>
+
+          <div className="flex flex-wrap gap-1 mb-3">
+            {asset.tags.map((tag, i) => (
+              <span
+                key={i}
+                className="bg-green-50 text-green-700 text-xs px-2 py-1 rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center justify-between mb-3">
+            <div>
+              <div className="text-sm text-gray-500">Token Price</div>
+              <div className="font-semibold text-green-700">
+                {new Intl.NumberFormat('id-ID').format(asset.price)} IDR
               </div>
             </div>
-          )}
-        </div>
-        
-        {/* Progress bar */}
-        <div className="mb-3">
-          <div className="flex justify-between text-xs mb-1">
-            <span>{asset.soldPercentage}% Sold</span>
-            <span>{asset.supply} Total Supply</span>
+            {asset.yield && (
+              <div className="text-right">
+                <div className="text-sm text-gray-500">Est. Yield</div>
+                <div className="font-semibold text-green-700 flex items-center">
+                  <TrendingUp className="h-4 w-4 mr-1" />
+                  {asset.yield}%
+                </div>
+              </div>
+            )}
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
-            <div 
-              className="bg-green-600 h-2 rounded-full" 
-              style={{ width: `${asset.soldPercentage}%` }}
-            ></div>
-          </div>
-        </div>
-        
-        <div className="flex justify-between items-center pt-2 border-t">
-          <div className="flex items-center">
-            <div className="relative h-6 w-6 rounded-full overflow-hidden mr-2">
-              <Image
-                src={asset.creator.imageUrl}
-                alt={asset.creator.name}
-                layout="fill"
-                className="object-cover"
-              />
+
+          {/* Progress bar */}
+          <div className="mb-3">
+            <div className="flex justify-between text-xs mb-1">
+              <span>{asset.soldPercentage}% Sold</span>
+              <span>{asset.supply} Total Supply</span>
             </div>
-            <span className="text-xs text-gray-600">
-              by {asset.creator.name}
-            </span>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div
+                className="bg-green-600 h-2 rounded-full"
+                style={{ width: `${asset.soldPercentage}%` }}
+              ></div>
+            </div>
           </div>
-          <Link 
-            href={`/token/${asset.id}`}
-            className="bg-green-600 hover:bg-green-700 text-white text-sm py-1 px-3 rounded-lg transition-colors"
-          >
-            View Details
-          </Link>
+
+          <div className="flex justify-between items-center pt-2 border-t">
+            <div className="flex items-center">
+              <div className="relative h-6 w-6 rounded-full overflow-hidden mr-2">
+                <Image
+                  src={asset.creator.imageUrl}
+                  alt={asset.creator.name}
+                  layout="fill"
+                  className="object-cover"
+                />
+              </div>
+              <span className="text-xs text-gray-600">
+                by {asset.creator.name}
+              </span>
+            </div>
+            <Link
+              href={`/token/${asset.id}`}
+              className="bg-green-600 hover:bg-green-700 text-white text-sm py-1 px-3 rounded-lg transition-colors"
+            >
+              View Details
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 
   return (
     <div className="bg-gray-50 min-h-screen pb-12">
@@ -348,7 +352,7 @@ export default function MarketplacePage() {
             Invest in Indonesian Agriculture
           </h1>
           <p className="text-green-100 text-lg max-w-2xl mb-8">
-            Browse tokenized agricultural assets from farmers across Indonesia. 
+            Browse tokenized agricultural assets from farmers across Indonesia.
             Support sustainable farming while earning returns on your investment.
           </p>
           <div className="relative max-w-2xl">
@@ -363,7 +367,7 @@ export default function MarketplacePage() {
           </div>
         </div>
       </div>
-      
+
       {/* Marketplace content */}
       <div className="container mx-auto px-4 py-8">
         {/* Filters and sorting section */}
@@ -373,7 +377,7 @@ export default function MarketplacePage() {
               <div className="mr-4 font-medium text-lg">
                 {filteredAssets.length} Assets Available
               </div>
-              <button 
+              <button
                 onClick={() => setShowFilters(!showFilters)}
                 className="flex items-center bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-700 hover:bg-gray-50"
               >
@@ -381,7 +385,7 @@ export default function MarketplacePage() {
                 Filters
               </button>
             </div>
-            
+
             <div className="flex items-center">
               <span className="text-gray-700 mr-2">Sort by:</span>
               <select
@@ -397,7 +401,7 @@ export default function MarketplacePage() {
               </select>
             </div>
           </div>
-          
+
           {/* Expanded filters */}
           {showFilters && (
             <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
@@ -420,11 +424,11 @@ export default function MarketplacePage() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="font-medium mb-3">Price Range (IDR)</h3>
                   <div className="px-2">
-                    <input 
+                    <input
                       type="range"
                       min="0"
                       max="20000"
@@ -439,7 +443,7 @@ export default function MarketplacePage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="font-medium mb-3">Region</h3>
                   <div className="grid grid-cols-2 gap-2">
@@ -463,9 +467,9 @@ export default function MarketplacePage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="flex justify-end mt-6">
-                <button 
+                <button
                   onClick={() => {
                     setAssetTypeFilter('ALL');
                     setPriceRange([0, 20000]);
@@ -476,7 +480,7 @@ export default function MarketplacePage() {
                 >
                   Reset Filters
                 </button>
-                <button 
+                <button
                   onClick={() => setShowFilters(false)}
                   className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
                 >
@@ -486,7 +490,7 @@ export default function MarketplacePage() {
             </div>
           )}
         </div>
-        
+
         {/* Featured section */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6 flex items-center">
@@ -499,7 +503,7 @@ export default function MarketplacePage() {
             ))}
           </div>
         </div>
-        
+
         {/* All assets grid */}
         <h2 className="text-2xl font-bold mb-6">All Available Assets</h2>
         {filteredAssets.length > 0 ? (
