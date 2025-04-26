@@ -201,7 +201,7 @@ export default function TokenizeSuccessPage() {
                   </div>
                   <div>
                     <h3 className="font-medium">Update your asset profile regularly</h3>
-                    <p className="text-sm text-gray-600">Keep investors informed about your asset's status</p>
+                    <p className="text-sm text-gray-600">Keep investors informed about your asset&aptos;s status</p>
                   </div>
                 </li>
                 <li className="flex">

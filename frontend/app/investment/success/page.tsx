@@ -144,7 +144,7 @@ export default function InvestmentSuccessPage() {
       </div>
       
       <div className="max-w-md mx-auto mt-8 text-center">
-        <h3 className="font-medium text-gray-800 mb-3">What's Next?</h3>
+        <h3 className="font-medium text-gray-800 mb-3">What &aptos;s Next?</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="bg-white p-4 rounded-lg shadow-sm">
             <div className="text-green-600 font-medium mb-1">Track</div>

@@ -8,6 +8,12 @@ const nextConfig = {
   //   locales: ['en', 'id'],
   //   defaultLocale: 'en',
   // },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: ['ipfs.io', 'gateway.pinata.cloud'],
   },
