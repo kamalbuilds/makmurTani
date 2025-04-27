@@ -31,6 +31,13 @@ MakmurTani utilizes Lisk's blockchain technology to create a decentralized platf
 
 5. **DeFi Microloans**: Enabling farmers to access capital by using their tokenized assets as collateral.
 
+| Contract Name | Address |
+|--------------|---------|
+| RWAFarmersToken | 0x5CDcCD7aD5989f5B32497d243d4274E213f4B6D2 |
+| IndonesianFarmlandRegistry | 0xdf479F9Ac656861f164cFE8a8B78D971c74659ca |
+| MakmurTaniMarketplace | 0xeB1a6776dcD5CaC0Edf8255932529bD29aB3d80B |
+| MakmurTaniLending | 0x588A3Ed0668CfDDe1Ba6ECfb916aD85991F86BAb |
+
 ## Technology Stack
 
 - **Blockchain**: Lisk L2 solution for low-cost, high-speed transactions
@@ -51,7 +58,7 @@ MakmurTani utilizes Lisk's blockchain technology to create a decentralized platf
 ## Getting Started
 
 - Explore the [contracts](./contracts) directory for smart contract development
-- Check out the [frontend](./frontend) directory for the Next.js PWA implementation
+- Check out the [frontend](./frontend) directory for the Next.js Progressive Web App implementation
 
 ## Join Us
 

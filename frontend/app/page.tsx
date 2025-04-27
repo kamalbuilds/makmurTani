@@ -14,7 +14,7 @@ export default function Home() {
   const messages = {
     title: "MakmurTani: Tokenizing Prosperity for Farmers",
     subtitle: "Empowering 33 million Indonesian smallholders with RWA tokenization, DeFi microloans, and transparent supply chains",
-    cta: "Get Started",
+    cta: "Read Whitepaper",
     featuresTitle: "Key Features",
     rwaTitle: "Real-World Asset Tokenization",
     rwaDescription: "Convert farmland, crops, and farming activities into tradable digital assets",
@@ -136,7 +136,7 @@ export default function Home() {
                 {messages.subtitle}
               </motion.p>
               <motion.button 
-                onClick={() => router.push('/dashboard')}
+                onClick={() => router.push('/makmurtani-whitepaper.pdf')}
                 className="bg-white text-green-800 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors"
                 variants={buttonVariants}
                 whileHover="hover"
