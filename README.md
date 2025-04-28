@@ -2,6 +2,9 @@
 
 MakmurTani ("Prosperous Farmer") is a comprehensive platform that brings supply chain transparency and investment opportunities to Indonesia's agricultural sector through the tokenization of real-world assets (RWAs).
 
+## Tagline
+"Tokenizing Prosperity for Indonesia's Farmers"
+
 ## The Problem
 
 Indonesia's agricultural sector faces significant challenges related to supply chain inefficiencies and a lack of transparency. 
@@ -37,6 +40,39 @@ MakmurTani utilizes Lisk's blockchain technology to create a decentralized platf
 | IndonesianFarmlandRegistry | 0xdf479F9Ac656861f164cFE8a8B78D971c74659ca |
 | MakmurTaniMarketplace | 0xeB1a6776dcD5CaC0Edf8255932529bD29aB3d80B |
 | MakmurTaniLending | 0x588A3Ed0668CfDDe1Ba6ECfb916aD85991F86BAb |
+
+## Description
+MakmurTani is a blockchain-based platform enabling Indonesian smallholder farmers to tokenize agricultural land, crops, and equipment as fractionalized Real-World Assets (RWAs) on Lisk's Ethereum-aligned Layer 2 blockchain.
+
+## What do you do in detail and who do you do it for?
+MakmurTani creates a comprehensive ecosystem for Indonesia's 33 million smallholder farmers by:
+- Tokenizing agricultural assets (land, crops, equipment) as NFTs and fungible tokens
+- Providing DeFi microloans with tokenized assets as collateral at 7-12% APY (vs 18-24% from traditional lenders)
+- Enabling transparent supply chain tracking with IoT sensors and blockchain verification
+- Operating a marketplace for trading tokenized agricultural assets
+- Offering a progressive web app with offline capabilities and bilingual support
+- Integrating with IDRX stablecoin for stable, local currency transactions
+
+Our platform serves farmers, investors, financial institutions, supply chain partners, and consumers across Indonesia's agricultural ecosystem.
+
+## What's different about MakmurTani?
+MakmurTani uniquely combines:
+- Indonesia-specific focus with deep agricultural expertise and local regulatory compliance
+- Built on Lisk's L2 for minimal transaction costs (~$0.001) essential for smallholder economics
+- Mobile-first, bilingual design optimized for rural areas with unstable connectivity
+- Integration with Indonesian rural banking networks and payment systems
+- Direct connection to agricultural cooperatives serving as verification nodes
+- Comprehensive approach addressing financing, land rights, and market access in one platform
+
+## How do you uniquely solve a problem for your users or customers?
+MakmurTani solves three critical problems facing Indonesian agriculture:
+
+1. **Liquidity Gap**: 80% of farmers lack formal loan collateral, creating a $2.8B financing gap. We solve this by tokenizing land and crops as verifiable collateral for DeFi loans.
+
+2. **Middlemen Exploitation**: Farmers typically receive only 30-40% of final crop value due to opaque supply chains. Our blockchain tracking creates transparency from farm to consumer, enabling fair pricing.
+
+3. **Fragmented Land Ownership**: 72% of farmland is informally owned, limiting credit access. Our platform works with both government land registry and community attestations to formalize ownership through NFTs.
+
 
 ## Technology Stack
 
