@@ -41,6 +41,30 @@ MakmurTani utilizes Lisk's blockchain technology to create a decentralized platf
 | MakmurTaniMarketplace | 0xeB1a6776dcD5CaC0Edf8255932529bD29aB3d80B |
 | MakmurTaniLending | 0x588A3Ed0668CfDDe1Ba6ECfb916aD85991F86BAb |
 
+## PharosDevnet Deployment
+Our smart contracts are deployed and available for testing on the Lisk PharosDevnet:
+
+| Contract Name | PharosDevnet Address |
+|--------------|---------|
+| RWAFarmersToken | 0xADbc9Df00DCf95d1C094e01dEf1E95211A9Ef51f |
+| IndonesianFarmlandRegistry | 0x75b261688f885b500c139CA37EbfD38Ff3cE7680 |
+| MakmurTaniMarketplace | 0x4784cD3051b2528fe842cC6F1cA6Bb117d0849CE |
+| MakmurTaniLending | 0xeC8a553C59BA71b414Bd31E0F4a69Cb6CbbdB001 |
+
+## How pharos helps Makmurtani
+
+1. Cost-Effective Transactions for Smallholder Economics
+We need that the transaction costs must be minimal (~$0.001) for smallholder economics to be viable:
+Efficient Transaction Layer: Pharos's transaction layer is designed for secure and efficient cross-chain asset interactions, keeping costs low even at scale.
+Optimized Gas Consumption: The modular architecture enables more efficient processing, critical for making micro-transactions economically viable for rural farmers.
+
+2. Data Layer Benefits for Supply Chain Tracking
+MakmurTani's supply chain verification system would benefit from:
+Decentralized Data Exchange Protocol: Enables efficient storage and verification of agricultural supply chain data, including IoT sensor readings and verification node attestations.
+Support for Advanced Use Cases: The mention of AI and FHE (Fully Homomorphic Encryption) integration suggests Pharos could support MakmurTani's machine learning models for yield prediction and risk assessment.
+
+
+
 ## Description
 MakmurTani is a blockchain-based platform enabling Indonesian smallholder farmers to tokenize agricultural land, crops, and equipment as fractionalized Real-World Assets (RWAs) on Lisk's Ethereum-aligned Layer 2 blockchain.
 
@@ -56,6 +80,7 @@ MakmurTani creates a comprehensive ecosystem for Indonesia's 33 million smallhol
 Our platform serves farmers, investors, financial institutions, supply chain partners, and consumers across Indonesia's agricultural ecosystem.
 
 ## What's different about MakmurTani?
+
 MakmurTani uniquely combines:
 - Indonesia-specific focus with deep agricultural expertise and local regulatory compliance
 - Built on Lisk's L2 for minimal transaction costs (~$0.001) essential for smallholder economics
